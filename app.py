@@ -20,7 +20,7 @@ def upload_file():
     if f_name != '':
         file_ext = os.path.splitext(f_name)[1]
         if file_ext in app.config['UPLOAD_EXTENSIONS']:
-            # f.save(f.filename)
+            f.save(f.filename)
             file_details['name'] = os.path.splitext(f.filename)[0]
             file_details['size'] = os.path.getsize(f.filename)
             file_details['type'] = filetype.guess(f.filename).mime 
